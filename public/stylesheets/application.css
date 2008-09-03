@@ -49,9 +49,6 @@ a {
   padding: 0 15px 10px 15px;
   margin-right: 10px;
   background-color: #b7282e;
-
-  -moz-border-radius-bottomleft: 5px;
-  -moz-border-radius-bottomright: 5px;
 }
 
 #main {
@@ -105,8 +102,5 @@ a {
   margin: 0 20px 0 auto;
   background-color: #b7282e;
   line-height: 20px;
-
-  -moz-border-radius-bottomleft: 5px;
-  -moz-border-radius-bottomright: 5px;
 }
 

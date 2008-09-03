@@ -13,7 +13,15 @@ test:
   database: db/test.sqlite3
   timeout: 5000
 
+# production:
+#   adapter: sqlite3
+#   database: db/production.sqlite3
+#   timeout: 5000
+
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  timeout: 5000
+  adapter: mysql
+  database: galerie
+  host: localhost
+  username: galerie
+  password: galerie
+  encoding: utf8
