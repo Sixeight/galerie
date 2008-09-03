@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: 'MyString'
+  path: 'images/img/mystring.png'
+  comment: "This is my photo"
+
+two:
+  name: 'MyString'
+  path: 'images/img/dn.png'
+  comment: "This is very dn photo'

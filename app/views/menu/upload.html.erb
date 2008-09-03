@@ -1,0 +1,11 @@
+<div id="gallary">
+  <div id="uploader">
+    <% form_tag({:action => 'create'}, :multipart => true) do |f| %>
+      <p>Please select the upload image.</p>
+      <p>
+        <%= file_column_field("images", "path") %>
+        <%= submit_tag 'upload' %>
+      </p>
+    <% end %>
+  </div>
+</div>
