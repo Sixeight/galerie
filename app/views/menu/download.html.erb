@@ -1,0 +1,40 @@
+<div id="gallary">
+  <table>
+    <% if @images.size == 0 %>
+      <% 3.times do %>
+    <tr><% 5.times { %><td class="noimage">x</td><% } %></tr>
+      <% end %>
+    <% else %>
+      <% count = 3 %>
+      <% @images.each_slice(5) do |imgs|  %>
+    <tr>
+        <% 5.times do |i| %>
+        <% @img = imgs[i] %>
+          <% if @img.nil? %>
+      <td class="noimage">x</td>
+          <% else %>
+      <td>
+        <div id="dlbox">
+          <span class="image">
+
+          <%= image_tag url_for_image_column :img, :path, :thumb %>
+          </span>
+          <span class="download">
+            <%= link_to 'download', url_for_file_column(:img, :path) %>  
+          </span>
+        </div>
+      </td>
+           <% end %>
+        <% end %>
+    </tr>
+      <% count -= 1 %>
+      <% end %>
+      <% count.times do %>
+        <tr><% 5.times { %><td class="noimage">x</td><% } %></tr>
+      <% end %>
+    <% end %>
+  </table>
+  <div id="pagenate">
+    <%= will_paginate @images %>
+  </div>
+</div>
