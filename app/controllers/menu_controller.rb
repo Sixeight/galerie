@@ -3,6 +3,10 @@ class MenuController < ApplicationController
     @images = Image.paginate :page => params[:page], :per_page => 15, :order => 'created_at desc'
   end
 
+  def download
+    @images = Image.paginate :page => params[:page], :per_page => 15, :order => 'created_at desc'
+  end
+
   def upload
   end
 
