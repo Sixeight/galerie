@@ -20,7 +20,10 @@
           <%= image_tag url_for_image_column :img, :path, :thumb %>
           </span>
           <span class="download">
-            <%= link_to 'download', url_for_file_column(:img, :path) %>  
+            <%= link_to 'dl', url_for_file_column(:img, :path) %>
+          </span>
+          <span class="download">
+            <%= link_to 'x', url_for_file_column(:img, :path) %>
           </span>
         </div>
       </td>
