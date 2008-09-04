@@ -72,19 +72,18 @@ a:hover {
 }
 #gallary table {
   margin: 0 auto;
-  border: 1px solid #aaa;
+  border: 1px solid #b7282e;
   border-spacing: 20px;
 }
 #gallary td {
   padding: 10px;
   width: 120px;
   height: 120px;
-  border: 1px solid #aaa;
 }
 #gallary .images {
-  padding: 0;
+  padding: 5px;
   margin: 0;
-  border: none;
+  border: 1px solid #aaa;
 }
 #gallary .noimage {
   color: #aaa;
