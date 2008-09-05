@@ -1,4 +1,4 @@
-<div id="gallary">
+<div id="gallery">
   <table>
     <% if @images.size == 0 -%>
       <% 3.times do -%>
@@ -13,11 +13,18 @@
           <% if @img.nil? -%>
       <td class="noimage">+</td>
           <% else -%>
-      <td><%= lightbox_image_tag(url_for_image_column(:img, :path, :thumb),
-                                 url_for_file_column(:img, :path),
-                                 {:class=>"images"},
-                                 :title => @img.name,
-                                 :rel => 'lightbox[photo]') %></td>
+      <td>
+        <%= lightbox_image_tag(url_for_image_column(:img, :path, :thumb),
+                               url_for_file_column(:img, :path),
+                               {:class=>"images"},
+                               :title => @img.name,
+                               :rel => 'lightbox[photo]') %>
+        <span class="download" style="display:none;">
+          <a href="<%= url_for_file_column(:img, :path) %>" target="blank">
+            <%= image_tag 'download.png', :width => 30, :height => 30 %>
+          </a>
+        </span>
+      </td>
            <% end -%>
         <% end -%>
     </tr>

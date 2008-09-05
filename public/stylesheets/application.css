@@ -16,6 +16,14 @@ a:hover {
   text-decoration: none;
 }
 
+input {
+  border: 1px solid #aaa;
+}
+
+img {
+  vertical-align: middle;
+}
+
 #header {
   margin-top: 0;
   padding-top: 0;
@@ -66,64 +74,65 @@ a:hover {
   text-align: center;
 }
 
-#gallary {
+#gallery {
   width: 830px;;
   margin: 20px auto 50px auto;
 }
-#gallary table {
+#gallery table {
   margin: 0 auto;
   border: 1px solid #b7282e;
   border-spacing: 20px;
 }
-#gallary td {
+#gallery td {
   padding: 10px;
   width: 120px;
   height: 120px;
 }
-#gallary .images {
+#gallery .images {
   padding: 5px;
   margin: 0;
   border: 1px solid #aaa;
 }
-#gallary .noimage {
+#gallery .noimage {
   color: #aaa;
 }
-#gallary #dlbox {
-  padding: 0;
-  margin: 0;
-  position: relative;
-  height: 100%;
-  width: 100%;
-}
-#gallary #dlbox span {
-  padding: 0;
-  margin: 0;
-}
-#gallary #dlbox .image {
-  z-index: 10;
-  display: block;
-}
-#gallary #dlbox .download {
-  z-index: 100;
-  position: absolute;
-  top: 100px;
-  left: 20px;
-  width: 90px;
-  height: 20px;
-  display: block;
-  border: 1px solid #aaa;
-  background-color: #fff;
-}
-#gallary #dlbox .download a {
-  padding: 0;
-  margin: 0;
-  font-size: 15px;
-  text-decoration: none;
+
+#gallery td span.download img {
+  border: none;
 }
 
 #uploader {
   padding: 50px;
   border: 1px solid #aaa;
+}
+
+#login_form {
+  padding: 50px;
+  border: 1px solid #aaa;
+}
+
+#help {
+  border: 1px solid #b7282e;
+}
+#help h2 {
+  margin: 10px 0;
+  padding: 0;
+  font-size: 18px;
+}
+#help dl {
+  margin: 0 auto;
+  padding: 0;
+  padding-bottom: 10px;
+  width: 300px;
+  text-align: left;
+}
+#help dt {
+  clear: both;
+  float: left;
+  width: 100px;
+}
+#help dd {
+  width: 300px;
 }
 
 #pagenate {
@@ -146,8 +155,30 @@ a:hover {
 #footer p {
   width: 830px;
   margin: 0 auto;
-  padding: 0 0;
-  padding-top: 10px;
-  padding-right: 10px;
+  padding: 0;
+  padding-top: 8px;
 }
 
+#notice {
+  color: green;
+  font-size: 15px;
+}
+#notice.error {
+  color: #b7282e;
+}
+
+#errorExplanation {
+  font-size: 14px;
+  border: 1px solid #b7282e;
+}
+#errorExplanation h2 {
+  font-size: 15px;
+  color: #b7282e;
+}
+#errorExplanation li {
+  color: #b7282e;
+}
+
+.clear {
+  clear: both;
+}

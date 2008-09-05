@@ -1,17 +1,23 @@
 class MenuController < ApplicationController
-  def index
-    @images = Image.paginate :page => params[:page], :per_page => 15, :order => 'created_at desc'
-  end
+  before_filter :authorize
 
-  def download
+  def index
     @images = Image.paginate :page => params[:page], :per_page => 15, :order => 'created_at desc'
   end
 
   def upload
   end
 
+  def help
+  end
+
   def create
-    Image.new(params[:images]).save!
-    redirect_to :action => 'upload'
+    @image = Image.new(params[:images])
+    if @image.save
+      flash[:notice] = 'Upload has completed!'
+      redirect_to :action => 'upload'
+    else
+      render :action => :upload;
+    end
   end
 end

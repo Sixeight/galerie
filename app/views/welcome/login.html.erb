@@ -1,0 +1,22 @@
+<div id="gallery">
+  <div id="login_form">
+    <%= error_messages_for :image %>
+    <% if flash[:notice] -%>
+    <div id="notice" class="error"><%= flash[:notice] %></div>
+    <% end -%>
+    <% form_tag do -%>
+      <p>Enter your name and password.</p>
+      <p>
+        <label for="name">name:</label>
+        <%= text_field_tag :name, params[:name] %>
+      </p>
+      <p>
+        <label for="password">password:</label>
+        <%= text_field_tag :password, params[:password] %>
+      </p>
+      <p>
+        <%= submit_tag 'login' %>
+      </p>
+    <% end -%>
+  </div>
+</div>

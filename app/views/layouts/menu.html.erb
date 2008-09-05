@@ -11,8 +11,10 @@
   </div>
   <div id="menu">
     <p>
-      <span><%= link_to 'top', :action => :index %></span>
-      <span><%= link_to 'upload', :action => :upload %></span>
+      <span><%= link_to 'top', :action => :index, :controller => :menu %></span>
+      <span><a onclick="$$('span.download').each(function(node) { node.style.display = '' });" style="cursor:pointer;">download</a></span>
+      <span><%= link_to 'upload', :action => :upload, :controller => :menu %></span>
+      <span><%= link_to 'help', :action => :help, :controller => :menu %></span>
     </p>
   </div>
   <div id="main">
@@ -20,8 +22,8 @@
   </div>
   <div id="footer">
     <p>
-      Powered by <%= link_to 'Ruby on Rails', {}, :url => 'http://www.rubyonrails.org/' %><br />
-      Created by N.Tomohiro
+      Created by Nishimura Tomohiro :<br />
+      Powered by <%= link_to 'Ruby on Rails', {}, :url => 'http://www.rubyonrails.org/' %> :
     </p>
   </div>
 </html>

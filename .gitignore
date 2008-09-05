@@ -2,3 +2,4 @@
 *.log
 public/images/image/**
 *.sqlite3
+schema.rb

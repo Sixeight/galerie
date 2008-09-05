@@ -1,9 +1,13 @@
-<div id="gallary">
+<div id="gallery">
   <div id="uploader">
-    <% form_tag({:action => 'create'}, :multipart => true) do |f| %>
+    <%= error_messages_for :image %>
+    <% if flash[:notice] -%>
+    <div id="notice"><%= flash[:notice] %></div>
+    <% end -%>
+    <% form_tag({ :action => :create }, :multipart => true) do %>
       <p>Please select the upload image.</p>
       <p>
-        <%= file_column_field("images", "path") %>
+        <%= file_column_field 'images', 'path', :size => 25 %>
         <%= submit_tag 'upload' %>
       </p>
     <% end %>
