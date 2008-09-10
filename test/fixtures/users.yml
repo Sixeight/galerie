@@ -1,5 +1,26 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
+<%
+  def hashed_pass(pass)
+    hpass = User.new
+    hpass.password = pass
+    hpass.hashed_password
+    @salt = hpass.salt
+  end
+%>
+
+tomohiro:
+  id: 1
+  name: 'tomohiro'
+  hashed_password: <%= hashed_pass('hogehoge') %>
+  salt: <%= @salt %>
+
+hasegawa:
+  id: 2
+  name: 'yunosuke'
+  hashed_password: <%= hashed_pass('pipipi') %>
+  salt: <%= @salt %>
+
 # one:
 #   column: value
 #
