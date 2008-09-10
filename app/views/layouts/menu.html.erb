@@ -2,19 +2,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
   <head>
-    <title>Welcome to ICSS2008 Photo Exchange</title>
+    <title>*galerie</title>
     <%= javascript_include_tag :defaults %>
     <%= stylesheet_link_tag 'application', 'lightbox' %>
   </head>
   <div id="header">
-    <h1>Welcome to ICSS2008 Photo Exchange</h1>
+    <h1>*galerie</h1>
   </div>
   <div id="menu">
     <p>
       <span><%= link_to 'top', :action => :index, :controller => :menu %></span>
-      <span><a onclick="$$('span.download').each(function(node) { node.style.display = '' });" style="cursor:pointer;">download</a></span>
       <span><%= link_to 'upload', :action => :upload, :controller => :menu %></span>
-      <span><%= link_to 'help', :action => :help, :controller => :menu %></span>
     </p>
   </div>
   <div id="main">

@@ -8,8 +8,8 @@ class MenuController < ApplicationController
   def upload
   end
 
-  def help
-  end
+#   def help
+#   end
 
   def create
     @image = Image.new(params[:images])

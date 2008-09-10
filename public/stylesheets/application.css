@@ -36,8 +36,8 @@ img {
   height: 25px;
   padding: 0;
   margin: 0 auto;
-  padding-top: 35px;
-  font-size: 18px;
+  padding-top: 30px;
+  font-size: 30px;
   letter-spacing: 1px;
 }
 
@@ -108,31 +108,7 @@ img {
 
 #login_form {
   padding: 50px;
-  border: 1px solid #aaa;
-}
-
-#help {
   border: 1px solid #b7282e;
-}
-#help h2 {
-  margin: 10px 0;
-  padding: 0;
-  font-size: 18px;
-}
-#help dl {
-  margin: 0 auto;
-  padding: 0;
-  padding-bottom: 10px;
-  width: 300px;
-  text-align: left;
-}
-#help dt {
-  clear: both;
-  float: left;
-  width: 100px;
-}
-#help dd {
-  width: 300px;
 }
 
 #pagenate {

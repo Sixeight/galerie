@@ -19,11 +19,6 @@
                                {:class=>"images"},
                                :title => @img.name,
                                :rel => 'lightbox[photo]') %>
-        <span class="download" style="display:none;">
-          <a href="<%= url_for_file_column(:img, :path) %>" target="blank">
-            <%= image_tag 'download.png', :width => 30, :height => 30 %>
-          </a>
-        </span>
       </td>
            <% end -%>
         <% end -%>
