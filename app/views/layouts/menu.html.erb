@@ -7,21 +7,39 @@
     <%= stylesheet_link_tag 'application', 'lightbox' %>
   </head>
   <div id="header">
-    <h1>*galerie</h1>
+    <% if uid = session[:user_id]
+         name = User.find(uid).name + '\'s '
+     else
+         name = '*'
+       end
+     %>
+    <h1><%= name %>galerie</h1>
   </div>
   <div id="menu">
     <p>
       <span><%= link_to 'top', :action => :index, :controller => :menu %></span>
+      <span><%= link_to 'my page', :action => :my_page, :controller => :menu %></span>
       <span><%= link_to 'upload', :action => :upload, :controller => :menu %></span>
+      <% unless session[:user_id].nil? -%>
+      <span class="sub_menu">
+        {
+        <%= link_to 'config', :action => :config, :controller => :menu %>, 
+        <%= link_to 'logout', :action => :logout, :controller => :welcome %>
+        }
+      </span>
+      <% end -%>
     </p>
   </div>
   <div id="main">
+    <% if !['login', 'upload'].include?(controller.action_name) && flash[:notice] -%>
+    <div id="error"><%= flash[:notice] %></div>
+    <% end -%>
     <%= yield %>
   </div>
   <div id="footer">
     <p>
-      Created by Nishimura Tomohiro :<br />
-      Powered by <%= link_to 'Ruby on Rails', {}, :url => 'http://www.rubyonrails.org/' %> :
+      Created by Nishimura Tomohiro<br />
+      Powered by <%= link_to 'Ruby on Rails', {}, :url => 'http://www.rubyonrails.org/' %>
     </p>
   </div>
 </html>

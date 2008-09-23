@@ -37,6 +37,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Install the default routes as the lowest priority.
   map.login 'login', :controller => 'welcome', :action => 'login'
+  map.logout 'logout', :controller => 'welcome', :action => 'logout'
   map.connect ':action/:id', :controller => 'menu'
   map.connect ':action/:id.:format', :controller => 'menu'
 end

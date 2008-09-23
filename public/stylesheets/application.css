@@ -28,19 +28,19 @@ img {
   margin-top: 0;
   padding-top: 0;
   color: #fff;
+  width: 100%;
   height: 70px;
   background-color: #b7282e;
 }
 #header h1 {
-  width: 830px;
+  width: 810px;
   height: 25px;
   padding: 0;
   margin: 0 auto;
   padding-top: 30px;
-  font-size: 30px;
+  font-size: 25px;
   letter-spacing: 1px;
 }
-
 #menu {
   padding: 0;
   margin: 0;
@@ -54,7 +54,7 @@ img {
   padding: 0;
   margin: 0 auto;
   font-size: 18px;
-  width: 820px;
+  width: 810px;
   color: #fff;
 }
 #menu p span {
@@ -68,6 +68,18 @@ img {
 #menu p span:hover a {
   color: #fff;
 }
+#menu p span.sub_menu {
+  display: inline;
+  font-size: 15px;
+  padding: 0 5px;
+  background-color: #b7282e;
+}
+#menu p span.sub_menu a {
+  color: #fff;
+}
+#menu p span.sub_menu a:hover {
+  color: #fdd;
+}
 
 #main {
   width: 100%;
@@ -75,16 +87,15 @@ img {
 }
 
 #gallery {
-  width: 830px;;
-  margin: 20px auto 50px auto;
+  width: 810px;
+  margin: 20px auto 25px auto;
 }
 #gallery table {
   margin: 0 auto;
   border: 1px solid #b7282e;
-  border-spacing: 20px;
+  border-spacing: 25px;
 }
 #gallery td {
-  padding: 10px;
   width: 120px;
   height: 120px;
 }
@@ -94,12 +105,21 @@ img {
   border: 1px solid #aaa;
 }
 #gallery .noimage {
+  width: 120px;
+  height: 120px;
+  padding: 5px;
   color: #aaa;
 }
-
-#gallery td span.download img {
-  border: none;
+#gallery td span.image_menu {
+  display: block;
+  padding-top: 3px;
+  font-size: 16px;
+  text-align: right;
 }
+#gallery td span.image_menu a {
+  text-decoration: none;
+}
+
 
 #uploader {
   padding: 50px;
@@ -129,7 +149,7 @@ img {
   color: #fff;
 }
 #footer p {
-  width: 830px;
+  width: 810px;
   margin: 0 auto;
   padding: 0;
   padding-top: 8px;
@@ -141,6 +161,16 @@ img {
 }
 #notice.error {
   color: #b7282e;
+}
+#error {
+  width: 810px;
+  margin: 10px auto;
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  color: #b7282e;
+  border: 3px dashed #e6b422;
 }
 
 #errorExplanation {

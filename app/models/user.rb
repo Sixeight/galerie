@@ -1,6 +1,9 @@
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
+  has_many :images
+  has_one :config
+
   validates_presence_of :name
   validates_uniqueness_of :name
 
@@ -31,7 +34,8 @@ class User < ActiveRecord::Base
   def password=(pwd)
     @password = pwd
     create_new_salt
-    self.hashed_password = User.encrypted_password(self.password, self.salt)
+    self.hashed_password =
+      User.encrypted_password(self.password, self.salt)
   end
 
   private
