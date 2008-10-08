@@ -11,7 +11,7 @@
       </p>
       <p>
         <label for="password">password:</label>
-        <%= text_field_tag :password, params[:password] %>
+        <%= text_field_tag :password, params[:password], :type => :password %>
       </p>
       <p>
         <%= submit_tag 'login' %>

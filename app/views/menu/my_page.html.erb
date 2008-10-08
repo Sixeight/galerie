@@ -20,6 +20,7 @@
                                :title => @img.name,
                                :rel => 'lightbox[photo]') %><br />
       <span class="image_menu">
+        <%= link_to '[download]', url_for_file_column(:img, :path) %>
         <%= link_to '[delete]', { :action => :delete, :id => @img.id },
                                   :confirm => 'Are you sure?', :method  => :delete %>
       </span>

@@ -25,7 +25,9 @@ class WelcomeController < ApplicationController
   end
 
   def logout
+    # FIXME: /loginとしないと動かなかった
     session[:user_id] = nil
-    redirect_to 'login'
+    session[:images] = nil
+    redirect_to '/login', :controller => :menu
   end
 end

@@ -2,8 +2,9 @@ class MenuController < ApplicationController
   before_filter :authorize
 
   def index
+    session[:images] ||= Image.all(:order => 'RAND()')
     @images =
-      Image.paginate :page => params[:page], :per_page => 15, :order => 'created_at desc'
+      session[:images].paginate :page => params[:page], :per_page => 15
   end
 
   def my_page
