@@ -5,7 +5,8 @@ class Image < ActiveRecord::Base
 
   file_column :path, :magick => {
     :versions => {
-      :thumb => '120x120',
+      :thumb   => '120x120',
+      :display => '600x600',
     }
   },
   :web_root => 'images/',

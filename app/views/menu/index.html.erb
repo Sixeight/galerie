@@ -15,7 +15,7 @@
           <% else -%>
       <td>
         <%= lightbox_image_tag(url_for_image_column(:img, :path, :thumb),
-                               url_for_file_column(:img, :path),
+                               url_for_image_column(:img, :path, :display),
                                {:class=>"images"},
                                :title => @img.name,
                                :rel => 'lightbox[photo]') %>

@@ -23,7 +23,7 @@
       <% unless session[:user_id].nil? -%>
       <span class="sub_menu">
         {
-        <%= link_to 'config', :action => :config, :controller => :menu %>, 
+        <!-- <%= link_to 'config', :action => :config, :controller => :menu %>, -->
         <%= link_to 'logout', :action => :logout, :controller => :welcome %>
         }
       </span>
@@ -39,7 +39,7 @@
   <div id="footer">
     <p>
       Created by Nishimura Tomohiro<br />
-      Powered by <%= link_to 'Ruby on Rails', {}, :url => 'http://www.rubyonrails.org/' %>
+      Powered by <%= link_to 'Ruby on Rails', 'http://www.rubyonrails.org/' %>
     </p>
   </div>
 </html>

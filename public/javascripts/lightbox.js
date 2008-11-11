@@ -421,14 +421,6 @@ Lightbox.prototype = {
 		// once image is preloaded, resize image container
 		imgPreloader.onload=function(){
 			Element.setSrc('lightboxImage', imageArray[activeImage][0]);
-      if(imgPreloader.width > 600) {
-        imgPreloader.height = imgPreloader.height * 600 / imgPreloader.width
-        imgPreloader.width = 600;
-      }
-      else if(imgPreloader.height > 600){
-        imgPreloader.width = imgPreloader.width * 600 / imgPreloader.height
-        imgPreloader.height = 600;
-      }
 			myLightbox.resizeImageContainer(imgPreloader.width, imgPreloader.height);
 			
 			imgPreloader.onload=function(){};	//	clear onLoad, IE behaves irratically with animated gifs otherwise 
