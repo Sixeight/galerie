@@ -20,6 +20,10 @@ class MenuController < ApplicationController
   def upload
   end
 
+  def download
+    send_file File.join(RAILS_ROOT, 'public', params[:path])
+  end
+
   def delete
     begin
       @image = Image.find params[:id]
