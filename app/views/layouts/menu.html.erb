@@ -18,7 +18,7 @@
   <div id="menu">
     <p>
       <span><%= link_to 'top', :action => :index, :controller => :menu %></span>
-      <span><%= link_to 'my page', :action => :my_page, :controller => :menu %></span>
+      <span><%= link_to 'download', :action => :my_page, :controller => :menu %></span>
       <span><%= link_to 'upload', :action => :upload, :controller => :menu %></span>
       <% unless session[:user_id].nil? -%>
       <span class="sub_menu">
