@@ -18,8 +18,6 @@ class User < ActiveRecord::Base
     user = self.find_by_name name
     if user
       expected_password = encrypted_password(password, user.salt)
-      p user.hashed_password
-      p expected_password
       if user.hashed_password != expected_password
         user = nil
       end
@@ -37,8 +35,6 @@ class User < ActiveRecord::Base
     self.hashed_password =
       User.encrypted_password(self.password, self.salt)
   end
-
-  private
 
   def self.encrypted_password(password, salt)
     string_to_hash = password + 'algorithm' + salt

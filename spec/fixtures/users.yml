@@ -4,16 +4,18 @@
   def hashed_pass(pass)
     hpass = User.new
     hpass.password = pass
-    hpass.hashed_password
     @salt = hpass.salt
+    hpass.hashed_password
   end
 %>
+
+<% SALT = 'Yunosuke' unless defined?(SALT) %>
 
 tomohiro:
   id: 1
   name: 'tomohiro'
-  hashed_password: <%= hashed_pass('hogehoge') %>
-  salt: <%= @salt %>
+  hashed_password: <%= User.encrypted_password 'hogehoge', SALT %>
+  salt: <%= SALT %>
 
 hasegawa:
   id: 2

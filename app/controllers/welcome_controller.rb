@@ -17,7 +17,11 @@ class WelcomeController < ApplicationController
       user = User.authenticate(params[:name], params[:password])
       if user
         session[:user_id] = user.id
-        redirect_to :action => :index, :controller => :menu
+        if uri = session[:original_url]
+          redirect_to uri
+        else
+          redirect_to :action => :index, :controller => :menu
+        end
       else
         flash.now[:notice] = 'Invalid user/password cimbination'
       end
