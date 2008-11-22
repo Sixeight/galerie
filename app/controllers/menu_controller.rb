@@ -2,19 +2,11 @@ class MenuController < ApplicationController
   before_filter :authorize
 
   def index
-    user = User.find session[:user_id]
-    @images =
-      user.images.paginate :page => params[:page], :per_page => 15, :order => 'created_at desc'
+    @images = pagenated_image_for(session[:user_id])
   end
 
   def my_page
-    user = User.find session[:user_id]
-    @images =
-      user.images.paginate :page => params[:page], :per_page => 15, :order => 'created_at desc'
-  end
-
-  def config
-    render :text => 'Not implemented yet.'
+    @images = pagenated_image_for(session[:user_id])
   end
 
   def upload
@@ -25,13 +17,11 @@ class MenuController < ApplicationController
   end
 
   def delete
-    begin
-      @image = Image.find params[:id]
-      @image.destroy
-    rescue
-      flash[:notice] = 'no such images!'
-    end
-
+    @image = Image.find params[:id]
+    @image.destroy
+  rescue
+    flash[:notice] = 'no such images!'
+  ensure
     redirect_to :action => :my_page
   end
 
@@ -48,4 +38,12 @@ class MenuController < ApplicationController
       render :action => :upload;
     end
   end
+
+  private
+
+  def pagenated_image_for(user_id)
+    user = User.find user_id
+    user.images.paginate :page => params[:page], :per_page => 15, :order => 'created_at desc'
+  end
 end
+

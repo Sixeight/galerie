@@ -3,3 +3,4 @@
 public/images/image/**
 *.sqlite3
 schema.rb
+doc
