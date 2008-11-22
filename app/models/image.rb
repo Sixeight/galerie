@@ -1,3 +1,5 @@
+require 'RMagick'
+
 class Image < ActiveRecord::Base
   belongs_to :user
 
@@ -8,9 +10,9 @@ class Image < ActiveRecord::Base
       :thumb   => '120x120',
       :display => {
         # at most 600x600 hack
-        :size => Magick::Geometry.new(600, 600,
+        :size => ::Magick::Geometry.new(600, 600,
                                       nil, nil,
-                                      Magick::GreaterGeometry)
+                                      ::Magick::GreaterGeometry)
       },
     }
   },
