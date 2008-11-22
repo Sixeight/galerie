@@ -6,7 +6,12 @@ class Image < ActiveRecord::Base
   file_column :path, :magick => {
     :versions => {
       :thumb   => '120x120',
-      :display => '600x600',
+      :display => {
+        # at most 600x600 hack
+        :size => Magick::Geometry.new(600, 600,
+                                      nil, nil,
+                                      Magick::GreaterGeometry)
+      },
     }
   },
   :web_root => 'images/',
