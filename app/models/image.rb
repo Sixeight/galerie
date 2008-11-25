@@ -1,3 +1,17 @@
+# == Schema Information
+# Schema version: 20080923053340
+#
+# Table name: images
+#
+#  id         :integer         not null, primary key
+#  name       :string(255)
+#  path       :string(255)
+#  comment    :text
+#  created_at :datetime
+#  updated_at :datetime
+#  user_id    :integer
+#
+
 require 'RMagick'
 
 class Image < ActiveRecord::Base

@@ -1,3 +1,14 @@
+# == Schema Information
+# Schema version: 20080923053340
+#
+# Table name: users
+#
+#  id              :integer         not null, primary key
+#  name            :string(255)
+#  hashed_password :string(255)
+#  salt            :string(255)
+#
+
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
