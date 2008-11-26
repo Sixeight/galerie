@@ -11,8 +11,8 @@ class MenuController < ApplicationController
         # user belongs to group
         user.group.users.map {|u| u.images }.flatten
       end
-    @images =
-      images.paginate :page => params[:page], :per_page => 15, :order => 'created_at desc'
+    images = images.sort_by {|image| image.created_at }.reverse
+    @images = images.paginate(:page => params[:page], :per_page => 15)
   end
 
   def my_page
