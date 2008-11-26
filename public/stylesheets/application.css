@@ -117,7 +117,16 @@ img {
   text-align: right;
 }
 #gallery td span.image_menu a {
+  color: #b7282e;
   text-decoration: none;
+}
+#gallery td span.image_menu a:hover {
+  color: #fff;
+  background-color: #b7282e;
+  text-decoration: none;
+}
+#gallery td.mine img.images {
+  border: 3px dotted #b7282e;
 }
 
 
