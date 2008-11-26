@@ -23,7 +23,11 @@
       <% unless session[:user_id].nil? -%>
       <span class="sub_menu">
         {
-        <!-- <%= link_to 'config', :action => :config, :controller => :menu %>, -->
+        <!--
+        <% if session[:admin] -%>
+        <%= link_to 'manage', :action => :logout, :controller => :welcome %>,
+        <% end -%>
+        -->
         <%= link_to 'logout', :action => :logout, :controller => :welcome %>
         }
       </span>

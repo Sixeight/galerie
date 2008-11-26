@@ -17,7 +17,9 @@ class WelcomeController < ApplicationController
       user = User.authenticate(params[:name], params[:password])
       if user
         session[:user_id] = user.id
+        session[:admin]   = user.admin
         if uri = session[:original_url]
+          session[:rotiginal_url] = nil
           redirect_to uri
         else
           redirect_to :action => :index, :controller => :menu

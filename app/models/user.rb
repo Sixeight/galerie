@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20080923053340
+# Schema version: 20081126100124
 #
 # Table name: users
 #
@@ -7,13 +7,15 @@
 #  name            :string(255)
 #  hashed_password :string(255)
 #  salt            :string(255)
+#  admin           :                default("f")
+#  group_id        :integer
 #
 
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
   has_many :images
-  has_one :config
+  belongs_to :group
 
   validates_presence_of :name
   validates_uniqueness_of :name
