@@ -20,9 +20,14 @@
                                :title => @img.name,
                                :rel => 'lightbox[photo]') %><br />
       <span class="image_menu">
+        <% user = @img.user -%>
         <%= link_to '[download]', :action => :download, :path => url_for_file_column(:img, :path) %>
-        <%= link_to '[delete]', { :action => :delete, :id => @img.id },
+        <% if user.id == session[:user_id] -%>
+        <%= link_to '[x]', { :action => :delete, :id => @img.id },
                                   :confirm => 'Are you sure?', :method  => :delete %>
+        <% end %>
+        <br />
+        by <%= user.name %>
       </span>
       </td>
            <% end -%>
