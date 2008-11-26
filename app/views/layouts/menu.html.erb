@@ -7,13 +7,14 @@
     <%= stylesheet_link_tag 'application', 'lightbox' %>
   </head>
   <div id="header">
-    <% if uid = session[:user_id]
-         name = User.find(uid).name + '\'s '
-     else
-         name = '*'
-       end
-     %>
-    <h1><%= name %>galerie</h1>
+    <%
+      if uid = session[:user_id]
+        name = User.find(uid).name
+      else
+        name = nil
+      end
+    -%>
+    <h1>*galerie: <%= name %></h1>
   </div>
   <div id="menu">
     <p>
